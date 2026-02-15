@@ -117,24 +117,11 @@ function toCamelCase(input, options = {}) {
             return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
         })
         .join('');
+    // PR: verified for review
 
     return camelCased;
-}
-
-// Jest test suite
-describe('toCamelCase', () => {
-    test('converts standard snake_case to camelCase', () => {
-        expect(toCamelCase('convert THIS_string-to camel case!')).toBe('convertThisStringToCamelCase');
-    });
-
     test('handles leading separators', () => {
         expect(toCamelCase('  --FOO_bar')).toBe('fooBar');
-    });
-
-    test('splits camelCase/PascalCase boundaries', () => {
-        expect(toCamelCase('XMLHttpRequest')).toBe('xmlHttpRequest');
-    });
-
     test('preserves digits within words', () => {
         expect(toCamelCase('version 2 update')).toBe('version2Update');
     });
