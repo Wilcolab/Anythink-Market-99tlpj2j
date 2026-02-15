@@ -1,5 +1,6 @@
 // PR: minor header — no functional changes
 // Chain prompt for Copilot to create `toKebabCase`
+// PR: timestamp: 2026-02-15T00:00:00Z
 function toKebabCase(input, options = {}) {
     // Step 1: Validate & normalize
     if (input === null || input === undefined) {
